@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "@mui/material/Button";
 
 type Props = {};
 
@@ -8,6 +9,14 @@ export default class about extends Component<Props, State> {
   state = {};
 
   render() {
-    return <div>about</div>;
+    return (
+      <div>
+        <Button variant="contained">Hello World</Button>
+      </div>
+    );
   }
+}
+
+function App() {
+  return;
 }

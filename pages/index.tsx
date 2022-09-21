@@ -4,10 +4,11 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "../src/Link";
-// import ProTip from "../src/ProTip";
-// import Copyright from "../src/Copyright";
+import { getFeaturedEvents } from "../data/dummy-data";
+import EventLIst from "../components/events/event-list";
 
 const Home: NextPage = () => {
+  const featuredEvents = getFeaturedEvents();
   return (
     <Container maxWidth="lg">
       <Box
@@ -25,8 +26,9 @@ const Home: NextPage = () => {
         <Link href="/about" color="secondary">
           Go to the about page
         </Link>
-        {/* <ProTip />
-        <Copyright /> */}
+        <div>
+          <EventLIst items={featuredEvents}></EventLIst>
+        </div>
       </Box>
     </Container>
   );
