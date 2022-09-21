@@ -1,5 +1,15 @@
 import React from "react";
 import Link from "../../src/Link";
+import { styled } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 
 type Props = {
   title: string;
@@ -17,21 +27,32 @@ const EventItem = (props: Props) => {
 
   return (
     <li>
-      <img src={"/" + image} alt={title} />
-      <div>
-        <div>
-          <h2>title</h2>
-          <div>
-            <time>{humandate}</time>
-          </div>
-          <div>
-            <address>{address}</address>
-          </div>
-        </div>
-        <div>
-          <Link href={exploreLink}>exlplore event</Link>
-        </div>
-      </div>
+      <Card>
+        <CardHeader>
+          title={title}
+          subtitle={address}
+        </CardHeader>
+        <CardMedia
+          component="img"
+          height="194"
+          image={"/" + image}
+          alt={title}
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {title}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <Link href={exploreLink}></Link>
+        </CardActions>
+      </Card>
     </li>
   );
 };
