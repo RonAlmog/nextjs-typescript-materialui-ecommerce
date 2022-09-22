@@ -50,7 +50,7 @@ const EventItem = (props: Props) => {
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
-          <Link href={exploreLink}></Link>
+          <Link href={exploreLink}>{title}</Link>
         </CardActions>
       </Card>
     </li>
